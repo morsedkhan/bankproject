@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Boostrab/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Boostrab/style.css">
+</head>
+<body>
+    <div id="login-area">
+        <h1 class="text-center">Welcome to poinear Bank</h1>
+        <div class="submit-area">
+            <h4>Login</h4>
+            <input type="text" placeholder="inter your Email" class="form-control">
+            <br>
+            <input type="password" placeholder="inter Your password" class="form-control">
+            <br>
+            <button id="logon" class="btn btn-success">Enter</button>
+        </div>    
+    </div>
+    <div id="tranction-area">
+
+      <div class="row">
+          <div class="col-md-4">
+             <div class="depposit stutas">
+                <h5>Depposit</h5>
+                <h2> <span id="currentDeposit"></span>$00</h2>
+             </div>
+          </div>
+          <div class="col-md-4">
+              <div class="withDrow stutas">
+                <h5>WithDrow</h5>
+                <h2>$44</h2>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="balance stutas">
+              <h5>Balance</h5>
+              <h2>$120</h2>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="submit-area">
+                <h4>Deposit</h4>
+                <input id="dippositAmount" type="text" placeholder="inter depossit ammount" class="form-control">
+                <br>
+                <button id="addDipesite" class="btn btn-success">Deposit</button>
+            </div>
+        </div>
+        <div class="col-md-6">  
+            <div class="submit-area">
+                <h4>withDrow</h4>
+                <input type="text" placeholder="inter withdrow ammount" class="form-control">
+                <br>
+                <button class="btn btn-success">withDrow</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+            // <!-- login Button event Handler Start here -->
+
+        const loginBtn = document.getElementById('logon');
+        loginBtn.addEventListener("click",function(){
+            const loginarea = document.getElementById("login-area");
+            loginarea.style.display ="none"
+            const transectionArea= document.getElementById("tranction-area")
+            transectionArea.style.display ="block"
+        }) 
+            // <!-- login Button event Handler End here -->
+
+
+        const dipesitBtn = document.getElementById("addDipesite");
+        dipesitBtn.addEventListener('click',function(){
+        const depositamount = document.getElementById("dippositAmount").value;
+        const depositNumber = parseFloat(depositamount);
+        
+        const currentDeposit = document.getElementById("currentDeposit").innerText;
+        const currentDepositNumber = parseFloat(currentDeposit);
+        const totalDeposit = depositNumber + currentDepositNumber;
+        console.log(totalDeposit)
+
+
+        })
+
+    </script>
+</body>
+</html>
